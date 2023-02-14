@@ -1,0 +1,1 @@
+export const FAKE_API = 'https://dummyjson.com/auth/login';
