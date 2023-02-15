@@ -8,7 +8,7 @@ import SideMenu from './Header/SideMenu';
 const Layout = (props:any) => {
   const { children } = props;
   return (
-    <Box>
+    <Box sx={{backgroundColor: 'lightGray'}}>
         <Header />
         <SideMenu />
         <Container>

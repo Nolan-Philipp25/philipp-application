@@ -5,7 +5,8 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 
 //@ts-ignorets-ignore
-import imageDefault from '../../common/images/not_found.webp';
+import imageDefault from '../../common/images/login_main.webp';
+import { useGetUser } from '../../hooks/useAuth';
 
 export interface IUserCard{
     firstName ?:string;
@@ -17,35 +18,26 @@ export interface IUserCard{
     image ?:string;
 }
 
- function UserCard(props:IUserCard) {
-    const defaultStr = 'Please login'
-    const { 
-            firstName=defaultStr,
-            lastName=defaultStr,
-            age=defaultStr,
-            bloodGroup=defaultStr,
-            username=defaultStr,
-            password=defaultStr,
-            image=imageDefault
-        } = props;
+ function UserCard() {
 
+  const {data} = useGetUser();
 
   return (
-    //@ts-ignorets-ignore
     <Card sx={{ display: 'flex', mt:6 }}>
-      <Box sx={{ width: '100%',display: 'flex', flexDirection: 'column', p:5,justifyContent:'center' }}>
-      <Typography variant="h6" gutterBottom>{firstName}</Typography>
-      <Typography variant="h6" gutterBottom>{lastName}</Typography>
-      <Typography variant="h6" gutterBottom>{age}</Typography>
-      <Typography variant="h6" gutterBottom>{bloodGroup}</Typography>
-      <Typography variant="h6" gutterBottom>{username}</Typography>
-      <Typography variant="h6" gutterBottom>{password}</Typography>
-      </Box>
-      <CardMedia
+       <CardMedia
         component="img"
         sx={{ width: '70%' }}
-        image={image}
+        image={imageDefault}
       />
+      <Box sx={{ width: '100%',display: 'flex', flexDirection: 'column', p:5,justifyContent:'center' }}>
+        <Typography variant="h6" gutterBottom>{data && data.firstName}</Typography>
+        <Typography variant="h6" gutterBottom>{data && data.lastName}</Typography>
+        <Typography variant="h6" gutterBottom>{data && data.age}</Typography>
+        <Typography variant="h6" gutterBottom>{data && data.bloodGroup}</Typography>
+        <Typography variant="h6" gutterBottom>{data && data.username}</Typography>
+        <Typography variant="h6" gutterBottom>{data && data.password}</Typography>
+      </Box>
+     
     </Card>
   )
 }
