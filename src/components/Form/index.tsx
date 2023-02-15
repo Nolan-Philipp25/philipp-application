@@ -1,24 +1,24 @@
 import React from 'react';
 import { Formik } from 'formik';
 import TextField from '@mui/material/TextField';
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-//@ts-ignorets-ignore
-import style from './style.module.sass';
 import { useNavigate } from 'react-router-dom';
 import { LOGIN_SCHEMA } from '../../utils/validationSchemas';
-
+import { Typography } from '@mui/material';
+import LoadingButton from '@mui/lab/LoadingButton';
 export interface IForm {
-    handler: Function
+    handler: Function;
+    loading: boolean;
 }
 
-const Form = ({handler}:IForm) => {
+const Form = ({handler, loading}:IForm) => {
   const navigate = useNavigate()
-
     return(
-        <div className={style.form}>
-                <h1 className={style.formTitle}>Login</h1>
+      <Box>
+        <Typography variant="h6" component="div">Login</Typography>
           <Formik
-            initialValues={{ username: '', password: '' }}
+            initialValues={{ username: 'kminchelle', password: '0lelplR' }}
             validationSchema={LOGIN_SCHEMA}
             validate={values => {
               const errors:any = {};
@@ -38,7 +38,6 @@ const Form = ({handler}:IForm) => {
             {({
               values,
               errors,
-              // touched,
               handleChange,
               handleBlur,
               handleSubmit,
@@ -46,40 +45,51 @@ const Form = ({handler}:IForm) => {
               /* and other goodies */
             }) => (
               <form onSubmit={handleSubmit}>
-                <TextField
-                  error={errors.username ? true :false}
-                  helperText={errors.username}
-                  label='User name'
-                  className={style.formField}
-                  type="text"
-                  name="username"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.username}
-                />
-                <TextField
-                  helperText={errors.password?.length !== 0 && errors.password}
-                  error={errors.password ? true :false}
-                  label='Password'
-                  className={style.formField}
-                  type="password"
-                  name="password"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.password}
-                /> 
-                  <div className={style.formButtons}>
-                  <Button variant="contained" type="submit" disabled={isSubmitting}>
-                  Submit
-                </Button>
-                <Button onClick={()=>navigate('/')} variant="contained"  color="error">
-                 go to back
-                </Button>
-                  </div>
+                <Box sx={{
+                  display:'flex',
+                  flexDirection:'column',
+                  px:4
+                  }}>
+                  <TextField
+                    error={errors.username ? true :false}
+                    helperText={errors.username}
+                    label='User name'
+                    type="text"
+                    name="username"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.username}
+                    sx={{pb:2}}
+                  />
+                  <TextField
+                    helperText={errors.password?.length !== 0 && errors.password}
+                    error={errors.password ? true :false}
+                    label='Password'
+                    type="password"
+                    name="password"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.password}
+                    sx={{pb:2}}
+                  /> 
+                    <Box sx={{
+                      display:'flex',
+                      justifyContent:'space-around',
+                      px:4
+                      }}>
+                    <LoadingButton variant="contained" type="submit"   loading={loading} disabled={isSubmitting}>
+                    Submit
+                  </LoadingButton>
+                  <Button onClick={()=>navigate('/')} variant="contained"  color="error">
+                  go to back
+                  </Button>
+                    </Box>
+                  </Box>
+               
               </form>
             )}
           </Formik>
-        </div>
+        </Box>
       );
 }
 

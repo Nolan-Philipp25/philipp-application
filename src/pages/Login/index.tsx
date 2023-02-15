@@ -49,7 +49,7 @@ useEffect(() => {
         item xs={6} md={4}   
         justifyContent="center"
         alignItems="center">
-        <Form handler={handler}/>
+        <Form handler={handler} loading={isLoading}/>
       </Grid>
   </Grid>
     
