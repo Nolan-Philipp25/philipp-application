@@ -1,19 +1,22 @@
 import React from 'react';
-//@ts-ignorets-ignore
-import style from './style.module.sass';
+import Typography from '@mui/material/Typography';
+import { Paper } from '@mui/material';
+import Layout from '../../components/Layout/index'
+import UserCard from '../../components/Card/index';
 
 const MainPage: React.FC = () => {
   return (
-    <div className='page'>
-      <div className={style.mainWrapper}>
-        <h1>You are welcome!</h1>
-        <div className={style.userData}>
-          <b>Success data to login</b>
-          <p><b>username:</b> kminchelle</p>
-          <p><b>password:</b> 0lelplR</p>
-        </div>
-      </div>
-    </div>
+    <Layout>
+      <Paper sx={{ p: 2, mt:4 }}>
+            <Typography variant="h3" gutterBottom>
+              You are welcome!
+            </Typography>
+            <b>Success data to login</b>
+            <p><b>username:</b> kminchelle</p>
+            <p><b>password:</b> 0lelplR</p>
+      </Paper>
+      <UserCard/>
+  </Layout>
   )
 }
 export default MainPage;

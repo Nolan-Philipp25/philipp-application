@@ -1,16 +1,21 @@
 import React from 'react';
+import Box from '@mui/material/Box';
 //@ts-ignorets-ignore
 import image from '../../common/images/not_found.webp';
-//@ts-ignorets-ignore
-import style from './style.module.sass';
+import Layout from '../../components/Layout/index';
+import CardMedia from '@mui/material/CardMedia';
 
 const NotFound: React.FC = () => {
   return (
-    <div className='page'>
-      <div className={style.wrapperImage}>
-        <img className={style.image} src={image}></img>
-      </div>
-    </div>
+    <Layout>
+      <Box sx={{ height:'90vh',display:'flex', justifyContent:'center', alignItems:'center'}}>
+        <CardMedia
+        component="img"
+        sx={{ width: '50%' }}
+        image={image}
+          />
+      </Box>
+    </Layout>
   )
 }
 export default NotFound;
