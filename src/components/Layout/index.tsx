@@ -14,7 +14,6 @@ const Layout = (props:any) => {
         <Container>
           {children}
         </Container>
-      
     </Box>
     
   )
