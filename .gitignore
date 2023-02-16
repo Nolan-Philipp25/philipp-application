@@ -3,4 +3,3 @@
 /.idea/*
 yarn.lock
 package-lock.json
-src/components/Layout
