@@ -5,8 +5,8 @@ import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
 
 //@ts-ignorets-ignore
-import imageDefault from '../../common/images/login_main.webp'
-import { useGetUser } from '../../hooks/useAuth'
+import imageDefault from 'src/common/images/login_main.webp'
+import { useGetUser } from 'src/hooks/useAuth'
 
 export interface IUserCard {
     firstName?: string
@@ -25,7 +25,7 @@ function UserCard() {
         <Card sx={{ display: 'flex', mt: 6 }}>
             <CardMedia
                 component="img"
-                sx={{ width: '70%' }}
+                sx={{ width: '50%' }}
                 image={imageDefault}
             />
             <Box

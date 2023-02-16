@@ -1,8 +1,8 @@
 import React from 'react'
-import Form from '../../components/Form/index'
+import Form from 'src/components/Form/index'
 //@ts-ignorets-ignore
-import image from "../../common/images/login_main.webp"
-import { useAuth } from '../../hooks/useAuth'
+import image from 'src/common/images/login_main.webp'
+import { useAuth } from 'src/hooks/useAuth'
 import Grid from '@mui/material/Grid'
 import CardMedia from '@mui/material/CardMedia'
 

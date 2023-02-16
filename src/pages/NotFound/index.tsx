@@ -1,11 +1,11 @@
 import React from 'react'
 import Box from '@mui/material/Box'
-//@ts-ignorets-ignore
-import image from '../../common/images/not_found.webp'
-import Layout from '../../components/Layout/index'
+//@ts-ignore
+import image from 'src/common/images/not_found.webp'
+import Layout from 'src/components/Layout/index'
 import CardMedia from '@mui/material/CardMedia'
 
-const NotFound: React.FC = () => {
+const NotFound = () => {
     return (
         <Layout>
             <Box

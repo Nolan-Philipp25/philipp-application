@@ -4,15 +4,16 @@ import TextField from '@mui/material/TextField'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import { useNavigate } from 'react-router-dom'
-import { LOGIN_SCHEMA } from '../../utils/validationSchemas'
+import { LOGIN_SCHEMA } from 'src/utils/validationSchemas'
 import { Typography } from '@mui/material'
 import LoadingButton from '@mui/lab/LoadingButton'
-export interface IForm {
+
+type Props = {
     handler: Function
     loading: boolean
 }
 
-const Form = ({ handler, loading }: IForm) => {
+const Form = ({ handler, loading }: Props) => {
     const navigate = useNavigate()
     return (
         <Box

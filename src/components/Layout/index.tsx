@@ -1,28 +1,27 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import Container from '@mui/material/Container'
 import Header from './Header/intex'
 import Box from '@mui/material/Box'
-import { ToastContainer, toast } from 'react-toastify'
+import { ToastContainer } from 'react-toastify'
 import SideMenu from './Header/SideMenu'
-import { useGetUser } from '../../hooks/useAuth'
 import 'react-toastify/dist/ReactToastify.css'
 
-const Layout = (props: any) => {
-    const { children } = props
-    const { data } = useGetUser()
+type Props = {
+    children: ReactNode
+}
 
-    data?.id !== undefined &&
-        toast.success('Sucess login.', {
-            position: 'bottom-right',
-            autoClose: 3000,
-            closeOnClick: true,
-            progress: undefined,
-            theme: 'light',
-        })
+const Layout = (props: Props) => {
+    const { children } = props
 
     return (
-        <Box sx={{ backgroundColor: '#EEF0F8' }}>
-            <Header data={data} />
+        <Box
+            sx={{
+                backgroundColor: '#EEF0F8',
+                height: '100vh',
+                weight: '100vw',
+            }}
+        >
+            <Header />
             <SideMenu />
             <Container>
                 <ToastContainer />

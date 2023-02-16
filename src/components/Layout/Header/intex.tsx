@@ -4,12 +4,11 @@ import Toolbar from '@mui/material/Toolbar'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import { Link } from 'react-router-dom'
-// import { useGetUser } from "../../../hooks/useAuth"
+import { useGetUser } from 'src/hooks/useAuth'
 import UserMenu from './UserMenu'
 
-const Header = (props: any) => {
-    const { data } = props
-    // const { data } = useGetUser()
+const Header = () => {
+    const { data } = useGetUser()
 
     return (
         <AppBar

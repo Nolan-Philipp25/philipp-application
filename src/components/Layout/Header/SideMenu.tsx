@@ -3,19 +3,19 @@ import Box from '@mui/material/Box'
 import Drawer from '@mui/material/Drawer'
 import List from '@mui/material/List'
 import Toolbar from '@mui/material/Toolbar'
-import menuItems from '../../../mainMenu'
+import menuItems from 'src/mainMenu'
 import SideMenuItem from './SideMenuItem'
-const drawerWidth = 240
+import { DRAWER_WIDTH } from 'src/constants'
 
 export default function SideMenu() {
     return (
         <Drawer
             variant="permanent"
             sx={{
-                width: drawerWidth,
+                width: DRAWER_WIDTH,
                 flexShrink: 0,
                 [`& .MuiDrawer-paper`]: {
-                    width: drawerWidth,
+                    width: DRAWER_WIDTH,
                     boxSizing: 'border-box',
                 },
             }}
