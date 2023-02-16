@@ -15,8 +15,8 @@ export interface IForm {
 const Form = ({handler, loading}:IForm) => {
   const navigate = useNavigate()
     return(
-      <Box>
-        <Typography variant="h6" component="div">Login</Typography>
+      <Box  sx={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center', width:'100%'}}>
+            <Typography sx={{my:2, width:'100%',textAlign:'center'}} variant="h3" component="div">Login</Typography>
           <Formik
             initialValues={{ username: 'kminchelle', password: '0lelplR' }}
             validationSchema={LOGIN_SCHEMA}
@@ -44,11 +44,11 @@ const Form = ({handler, loading}:IForm) => {
               isSubmitting,
               /* and other goodies */
             }) => (
-              <form onSubmit={handleSubmit}>
+              <form style={{width:'100%'}} onSubmit={handleSubmit}>
                 <Box sx={{
                   display:'flex',
                   flexDirection:'column',
-                  px:4
+                  px:4,
                   }}>
                   <TextField
                     error={errors.username ? true :false}
@@ -59,7 +59,7 @@ const Form = ({handler, loading}:IForm) => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.username}
-                    sx={{pb:2}}
+                    sx={{pb:2,width:'100%'}}
                   />
                   <TextField
                     helperText={errors.password?.length !== 0 && errors.password}

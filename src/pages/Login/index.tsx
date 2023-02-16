@@ -8,14 +8,10 @@ import Grid from '@mui/material/Grid';
 import CardMedia from '@mui/material/CardMedia';
 
 function LoginPage() {
-// const [userId, setUserId] = useState();
+
 
 //@ts-ignorets-ignore
 const { isLoading, mutateAsync, status, data} = useAuth();
-
- //@ts-ignorets-ignore
-// const {  error, dataUser, isFetching } = useGetUser(userId);
-
 
 //@ts-ignorets-ignore
   const handler = async(values)=> await mutateAsync( values );
@@ -45,10 +41,12 @@ useEffect(() => {
           image={image}
           />
       </Grid>
-      <Grid 
-        item xs={6} md={4}   
+      <Grid
+        container item xs={6} md={4}
+        direction="column"
+        alignItems="center"
         justifyContent="center"
-        alignItems="center">
+        >
         <Form handler={handler} loading={isLoading}/>
       </Grid>
   </Grid>
