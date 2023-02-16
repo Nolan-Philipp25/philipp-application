@@ -12,7 +12,7 @@
         "moduleResolution": "node",
         "resolveJsonModule": true,
         "isolatedModules": true,
-        "jsx": "preserve",
+        "jsx": "react-jsx",
         "incremental": true,
         "allowSyntheticDefaultImports": true,
         "baseUrl": ".",
@@ -21,7 +21,8 @@
         },
         "noUnusedParameters": true,
         "noUnusedLocals": true
+        
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/__tests__/App.test.tsx"],
     "exclude": ["node_modules"]
 }

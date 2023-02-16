@@ -1,5 +1,5 @@
 import { useMutation, useQuery } from 'react-query'
-import { post, get } from '../services/api.service'
+import { post, get } from 'src/services/api.service'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 

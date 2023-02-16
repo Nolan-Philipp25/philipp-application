@@ -1,7 +1,6 @@
-import React from 'react'
-import Form from 'src/components/Form/index'
+import Form from 'src/components/Form'
 //@ts-ignorets-ignore
-import image from 'src/common/images/login_main.webp'
+// import image from 'src/common/images/login_main.webp'
 import { useAuth } from 'src/hooks/useAuth'
 import Grid from '@mui/material/Grid'
 import CardMedia from '@mui/material/CardMedia'
@@ -16,7 +15,7 @@ function LoginPage() {
                 <CardMedia
                     component="img"
                     sx={{ maxHeight: '100vh' }}
-                    image={image}
+                    image='https://klike.net/uploads/posts/2018-10/1539499416_1.jpg'
                 />
             </Grid>
             <Grid

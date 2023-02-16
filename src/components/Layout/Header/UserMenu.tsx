@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography'
 import Tooltip from '@mui/material/Tooltip'
 import Box from '@mui/material/Box'
 import { useNavigate } from 'react-router-dom'
-import { IUserCard } from 'src/components/Card/index'
+import { IUserCard } from 'src/components/Card'
 
 type Props = {
     user: IUserCard
