@@ -2,9 +2,7 @@ import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
 import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
-
-//@ts-ignorets-ignore
-// import imageDefault from 'src/common/images/login_main.webp'
+import BgImage from 'src/common/images/322-ai.svg'
 import { useGetUser } from 'src/hooks/useAuth'
 
 export interface IUserCard {
@@ -25,7 +23,7 @@ function UserCard() {
             <CardMedia
                 component="img"
                 sx={{ width: '50%' }}
-                image='https://klike.net/uploads/posts/2018-10/1539499416_1.jpg'
+                image={BgImage}
             />
             <Box
                 sx={{
