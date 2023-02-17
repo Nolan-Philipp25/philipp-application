@@ -22,8 +22,12 @@
         },
         "noUnusedParameters": true,
         "noUnusedLocals": true
-        
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/__tests__/App.test.tsx"],
+    "include": [
+        "next-env.d.ts",
+        "**/*.ts",
+        "**/*.tsx",
+        "src/__tests__/App.test.tsx"
+    ],
     "exclude": ["node_modules"]
 }

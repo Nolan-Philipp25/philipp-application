@@ -20,11 +20,7 @@ function UserCard() {
 
     return (
         <Card sx={{ display: 'flex', mt: 6 }}>
-            <CardMedia
-                component="img"
-                sx={{ width: '50%' }}
-                image={BgImage}
-            />
+            <CardMedia component="img" sx={{ width: '50%' }} image={BgImage} />
             <Box
                 sx={{
                     width: '100%',
