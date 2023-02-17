@@ -9,7 +9,7 @@ const menuItems: IMenuItem[] = [
     label: 'Trash',
   },
   {
-    label: 'Gero list',
+    label: 'Hero list',
     items: [
       {
         label: 'Sub Item 1',

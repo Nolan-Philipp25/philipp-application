@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 import Container from '@mui/material/Container'
-import Header from './Header/intex'
+import Header from './Header'
 import Box from '@mui/material/Box'
 import { ToastContainer } from 'react-toastify'
 import SideMenu from './Header/SideMenu'

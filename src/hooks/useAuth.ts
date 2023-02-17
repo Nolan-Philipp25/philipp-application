@@ -19,7 +19,7 @@ export const useAuth = () => {
       onSuccess: (info) => {
         console.log('onSuccess', info.data)
         localStorage.setItem('user', JSON.stringify(info.data))
-        toast.success('Sucess login', toastOptions);
+        toast.success('Success login', toastOptions);
         navigate('/')
       },
       onError: (e) => {
