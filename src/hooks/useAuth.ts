@@ -1,7 +1,15 @@
 import { useMutation, useQuery } from 'react-query'
 import { post, get } from 'src/services/api.service'
 import { useNavigate } from 'react-router-dom'
-import { toast } from 'react-toastify'
+import { ToastOptions, toast } from 'react-toastify'
+
+const toastOptions: ToastOptions = {
+  position: 'bottom-right',
+  autoClose: 3000,
+  closeOnClick: true,
+  progress: undefined,
+  theme: 'light',
+};
 
 export const useAuth = () => {
   const navigate = useNavigate()
@@ -11,17 +19,12 @@ export const useAuth = () => {
       onSuccess: (info) => {
         console.log('onSuccess', info.data)
         localStorage.setItem('user', JSON.stringify(info.data))
-        toast.success('Sucess login.', {
-          position: 'bottom-right',
-          autoClose: 3000,
-          closeOnClick: true,
-          progress: undefined,
-          theme: 'light',
-        })
+        toast.success('Sucess login', toastOptions);
         navigate('/')
       },
       onError: (e) => {
         console.log('onError', e)
+        toast.error('Username or password are not correct ', toastOptions);
       },
     }
   )

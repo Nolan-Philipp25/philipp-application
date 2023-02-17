@@ -3,6 +3,7 @@ import { login } from 'src/content'
 import { useAuth } from 'src/hooks/useAuth'
 import Grid from '@mui/material/Grid'
 import CardMedia from '@mui/material/CardMedia'
+import { ToastContainer } from 'react-toastify'
 
 function LoginPage() {
   const { isLoading, mutateAsync } = useAuth()
@@ -23,6 +24,7 @@ function LoginPage() {
         justifyContent="center"
       >
         <Form handler={handler} loading={isLoading} />
+        <ToastContainer />
       </Grid>
     </Grid>
   )
