@@ -17,7 +17,7 @@ const Layout = (props: Props) => {
   return (
     <Box
       sx={{
-        backgroundColor: '#EEF0F8',
+        backgroundColor: 'lightgray',
         height: '100vh',
         weight: '100vw',
       }}
