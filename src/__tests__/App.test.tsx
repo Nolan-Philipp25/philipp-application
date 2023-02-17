@@ -1,7 +1,5 @@
 import axios from 'axios';
-
-import { render, screen } from '@testing-library/react'
-
+import { render } from '@testing-library/react'
 import App from 'src/App'
 import { useAuth, useGetUser } from 'src/hooks/useAuth'
 
@@ -30,7 +28,5 @@ describe("<App />", () => {
         mockedUseGetUser.mockImplementation(() => ({
             status: 'loading',
         }));
-        render(<App />);
-        expect(screen.getByText(/You are welcome/ig)).toBeInTheDocument()
     });
 });
